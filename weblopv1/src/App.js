@@ -8,7 +8,7 @@ function App() {
   const [data,setData] = useState([{}])
 
   useEffect(()=>{
-    fetch('/easteregg').then(
+    fetch('/api').then(
       res => res.json()
     ).then(
       data => {
@@ -21,7 +21,7 @@ function App() {
   console.log(data.easteregg)
   return (
     <div>
-      {(typeof data.easteregg === undefined)?(
+      {(typeof data.message === undefined)?(
         <p>loading...</p>
       )  :(
         <p>{data.message}</p>
